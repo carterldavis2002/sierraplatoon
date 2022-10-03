@@ -1,9 +1,8 @@
-//Returns array of unique pairs from input array that add up to num
+//Returns array of pairs from input array that add up to num
 exports.sumPairs = function(arr, num) {
     let pairs = []; //Holds pairs that add up to sum
 
-    //Iterate over every possible pair of
-    //array elements (no duplicates!)
+    //Iterate over every possible pair of array elements
     for (let i = 0; i < arr.length; i++) {
         for (let j = i + 1; j < arr.length; j++) {
 
