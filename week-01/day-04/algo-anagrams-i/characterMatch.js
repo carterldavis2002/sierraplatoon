@@ -5,8 +5,8 @@ exports.isCharacterMatch = function(string1, string2) {
     let characterMap2 = {};
 
     //Remove spaces from each string
-    string1 = string1.split(" ").join("");
-    string2 = string2.split(" ").join("");
+    string1 = string1.replace(/\s/g, "");
+    string2 = string2.replace(/\s/g, "");
 
     //Populate characterMap1 with string1 characters
     for (let i = 0; i < string1.length; i++) {
