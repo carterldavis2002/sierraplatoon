@@ -25,6 +25,6 @@ exports.balanceParens = function(s) {
             return false;
     }
     
-    //Stack items may be leftover if they were more open than closed
+    //Stack items may be leftover if there were more open than closed
     return stack.length === 0;
 }
