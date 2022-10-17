@@ -1,3 +1,6 @@
+from xml.dom.minicompat import NodeList
+
+
 class Node:
     def __init__(self, val):
         self.val = val
