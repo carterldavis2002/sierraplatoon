@@ -2,7 +2,7 @@ import math
 import re
 
 def factorial(x):
-    return 1 if x <= 1 else factorial(x - 1) * x;
+    return 1 if x <= 1 else factorial(x - 1) * x
 
 def palindrome(string):
     def helper(string, idx):
@@ -37,5 +37,16 @@ def roman_num(num):
         
         return helper(num, map[1:], str)
 
-    map = [["M", 1000], ["CM", 900], ["D", 500], ["CD", 400], ["C", 100], ["XC", 90], ["L", 50], ["XL", 40], ["X", 10], ["IX", 9], ["V", 5], ["IV", 4], ["I", 1]];
-    return helper(num, map, "");
+    map = [["M", 1000], ["CM", 900], ["D", 500], ["CD", 400], ["C", 100], ["XC", 90], ["L", 50], ["XL", 40], ["X", 10], ["IX", 9], ["V", 5], ["IV", 4], ["I", 1]]
+    return helper(num, map, "")
+
+def roman_num_alt(num):
+    map = [["M", 1000], ["CM", 900], ["D", 500], ["CD", 400], ["C", 100], ["XC", 90], ["L", 50], ["XL", 40], ["X", 10], ["IX", 9], ["V", 5], ["IV", 4], ["I", 1]]
+
+    for a, b in map:
+        if num >= b:
+            return a + roman_num_alt(num - b)
+
+    return ""
+
+print(roman_num_alt(944))
