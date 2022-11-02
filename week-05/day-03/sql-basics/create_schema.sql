@@ -21,7 +21,7 @@ CREATE TABLE addresses (
 
 CREATE TABLE classes (
   id serial PRIMARY KEY,
-  name varchar(255) NOT NULL,
+  "name" varchar(255) NOT NULL,
   credits decimal NOT NULL
 );
 
