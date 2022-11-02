@@ -13,4 +13,4 @@ endpoint = "http://api.thenounproject.com/icon/1"
 
 response = requests.get(endpoint, auth=auth)
 responseJSON = response.json()
-pp.pprint(responseJSON)
+pp.pprint(responseJSON["icon"]["id"])
