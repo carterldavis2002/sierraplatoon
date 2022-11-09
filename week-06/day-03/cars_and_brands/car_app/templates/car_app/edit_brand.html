@@ -1,0 +1,10 @@
+<h1>Edit {{brand.name}}</h1>
+<p><strong>Previous name:</strong> {{brand.name}}</p>
+<form method="POST" action="/brands/">
+  {% csrf_token %}
+  <label for="name"><strong>New name:</strong></label>
+  <input type="text" required maxlength="255" name="name">
+  <input type="hidden" name="id" value="{{brand.id}}">
+  <input type="submit" value="Update">
+</form>
+<a href="/brands/">Home</a>

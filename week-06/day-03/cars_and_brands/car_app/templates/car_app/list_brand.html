@@ -1,0 +1,10 @@
+<h1>All Brands</h1>
+<ul>
+  {% for brand in brands %}
+    <li>
+      <a href="/brands/{{brand.id}}">{{brand.name}}</a>
+      <input type="submit" onclick="window.location='/brands/{{brand.id}}/edit'" value="Edit">
+    </li>
+  {% endfor %}
+</ul>
+<input type="submit" onclick="window.location='/brands/new'" value="New">

@@ -1,0 +1,7 @@
+<h1>{{brand.name}} Cars</h1>
+{% for car in brand.cars.all %}
+  <li><a href="/brands/{{brand.id}}/cars/{{car.id}}">{{car.model}}</a></li>
+{% endfor %}
+<input type="submit" onclick="window.location='/brands/{{brand.id}}/cars/new'" value="New"><br>
+<a href="/brands/{{brand.id}}">Back to {{brand.name}}</a>
+<a href="/brands">Home</a>
