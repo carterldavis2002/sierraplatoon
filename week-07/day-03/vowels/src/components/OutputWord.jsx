@@ -1,14 +1,30 @@
 function OutputWord (props) {
 
+    let key = 0;
     const displayCharacters = () => {
         let arr = []
+
         for (let i = 0; i < props.word.length; i++) {
-            if (props.word[i] == 'a' || props.word[i] == 'i' || props.word[i] == 'e' || props.word[i] == 'o' || props.word[i] == 'u')
+            arr.push(<div key={`${key}`}>{getSpans(props.word[i])}</div>)
+            key++;
+            arr.push(<p key={`${key}`}>Vowel Count: {props.vowels[i]}</p>)
+            key++;
+        }
+
+        return arr
+    }
+
+    const getSpans = (w) => {
+        let arr = []
+
+        for (let i = 0; i < w.length; i++) {
+            key++;
+            if (w[i] == 'a' || w[i] == 'i' || w[i] == 'e' || w[i] == 'o' || w[i] == 'u')
             {
-                arr.push(<span className="vowel">{props.word[i]}</span>)
+                arr.push(<span key={`${key}`} className="vowel">{w[i]}</span>)
             }
             else
-                arr.push(<span>{props.word[i]}</span>)
+                arr.push(<span key={`${key}`}>{w[i]}</span>)
         }
 
         return arr
@@ -16,10 +32,7 @@ function OutputWord (props) {
 
     return (
         <div>
-            <div className="OutputWord">
-                {displayCharacters()}
-            </div>
-            <p>Vowel Count: {props.vowels}</p>
+            {displayCharacters()}
         </div>
     )
 }

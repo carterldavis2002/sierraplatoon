@@ -39,9 +39,9 @@ h1 {
 }
 
 .OutputWord {
-  display: flex;
+  /*display: flex;*/
   max-width: 90vw;
-  flex-wrap: wrap;
+  /*flex-wrap: wrap;*/
   justify-content: center;
   min-height: 3.2em;
 }
