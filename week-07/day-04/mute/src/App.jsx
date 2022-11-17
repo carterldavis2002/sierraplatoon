@@ -1,23 +1,16 @@
 import './App.css'
 import on from './assets/icons/on.svg'
 import off from './assets/icons/off.svg'
+import {useState} from 'react'
 
 function App() {
 
-  const toggle = (e) => {
-    if (e.target.dataset.src == on) {
-      e.target.dataset.src = off
-      e.target.src = off
-      return
-    }
-
-    e.target.dataset.src = on
-    e.target.src = on
-  }
+  const [link, setLink] = useState(on)
+  const toggle = () => setLink(link == on ? off : on)
 
   return (
     <div>
-      <img data-src={on} src={on} onClick={toggle}></img>
+      <img src={link} onClick={toggle}></img>
     </div>
   )
 }
