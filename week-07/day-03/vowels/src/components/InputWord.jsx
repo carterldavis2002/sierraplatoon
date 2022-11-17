@@ -15,7 +15,7 @@ function InputWord (props) {
     return (
         <div className="InputWord">
             <h1>Type Thy Word</h1>
-            <input type="text" placeholder="Type here..." /><br />
+            <input type="text" placeholder="Type here..." autoComplete="off"/><br />
             <button onClick={updateWord}>Submit</button>
         </div>
     )
