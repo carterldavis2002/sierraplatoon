@@ -1,9 +1,8 @@
 function Dropdown(props) {
-
     return (
       <div>
         <h1>Choose a State</h1>
-        <select onChange={(e) => props.setState(e.target.value)}>
+        <select id="dropdown" onChange={(e) => props.setState(e.target.value)} value={props.states[0]['alpha-2']}>
             {
               props.states.map((s, i) => {
                 return (
@@ -16,7 +15,6 @@ function Dropdown(props) {
         </select>
       </div>
     )
-  
   }
   
 export default Dropdown
